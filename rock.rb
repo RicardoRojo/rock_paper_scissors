@@ -16,11 +16,13 @@ def instructions
   50.times {print "="}
   puts "\n Tip: Spock is the best"
 end
+
 def total_results(games_played,games_won,games_lost)
   puts "\n Number of games played #{games_played}".center(50)
   puts "\n Number of games won #{games_won}"
   puts "\n Number of games lost #{games_lost}"
 end
+
 def who_wins(player_play)
   computer_play = rand(1..5)
   puts "computer choice #{choices[computer_play]}"
@@ -37,15 +39,19 @@ def who_wins(player_play)
     puts "#{choices[computer_play]} #{results[choices[computer_play]][game_result]} #{player_play}." + " You loose!!"
   end
 end
+
 instructions # show instructions
+
 # counters
 games_played = 0 
 games_won = 0
 games_lost = 0
+
 # values hashes
 choices = {1 => "rock", 2 => "paper", 3 => "scissors", 4 => "spock", 5 => "lizard"}
 results = {"rock" => {1 => "crushes ", 3 => "crushes "}, "paper" => {1 => "covers ", 3 => "disproves "}, "scissors" => {1 => "cuts ", 3 => "decapitates"}, "spock" => {1 => "smashes ", 3 => "vaporizes "}, "lizard" => {1 => "poisons ", 3 => "eats "}}
 error_message = ["upps, wrong option.", "Option is wrong, try again", "That option is not logic, choose again"]
+
 # Action
 begin
   puts "choose: rock paper scissors lizard spock (exit for ending)".center(50)
@@ -61,4 +67,5 @@ begin
   end
 end while player_play != "exit" 
 
+# results
 total_results(games_played,games_won,games_lost)
