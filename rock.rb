@@ -23,9 +23,9 @@ def total_results(game_stats)
   puts "Number of draws #{game_stats['draw']}"
 end
 
-def who_wins(player_play,computer_play,plays,results)
+def who_wins(player_play, computer_play, plays,results)
   game_result = (plays.key(player_play) - computer_play) % 5
-  if (game_result.odd?)
+  if game_result.odd?
     puts "#{player_play} #{results[player_play][game_result]} #{plays[computer_play]}." + " You WIN!!"
     return "player_wins"
   elsif game_result == 0
